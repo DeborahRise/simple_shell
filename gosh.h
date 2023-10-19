@@ -22,10 +22,10 @@
 #define MAX_A_VALUE 100
 
 /**
-* struct format - struct for printf specifiers
-* @id: type char pointer of the specifier
-* @f: type pointer to function for the conversion specifier
-*/
+ * struct format - struct for printf specifiers
+ * @id: type char pointer of the specifier
+ * @f: type pointer to function for the conversion specifier
+ */
 
 typedef struct format
 {
