@@ -22,11 +22,10 @@
 #define MAX_A_VALUE 100
 
 /**
- * struct format - struct for printf specifiers
- * @id: type char pointer of the specifier 
- * @f: type pointer to function for the conversion specifier
- *
- */
+* struct format - struct for printf specifiers
+* @id: type char pointer of the specifier
+* @f: type pointer to function for the conversion specifier
+*/
 
 typedef struct format
 {
@@ -37,15 +36,14 @@ typedef struct format
 
 /**
  * struct alias - struct for printf specifiers
- * @name: the alias name 
- * @value: the alias value
- *
+ * @a_name: the alias name
+ * @a_value: the alias value
  */
 
 struct alias
 {
-        char a_name[MAX_A_NAME];
-        char a_value[MAX_A_VALUE];
+	char a_name[MAX_A_NAME];
+	char a_value[MAX_A_VALUE];
 };
 
 /* External Variables */
@@ -78,7 +76,7 @@ int _env_exec(char **agv);
 int _setenv_exec(char **agv);
 int _unsetenv_exec(char **agv);
 char **get_args(char *gcmdln);
-char  *get_gcmdpath(char **agv); 
+char  *get_gcmdpath(char **agv);
 char *_gcmdpath_expandr(char *rel_path);
 char *_getfull_path(char *rel_path, char *cwd, int slashed);
 char *_getparent_path(char *cwd);
