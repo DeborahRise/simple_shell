@@ -1,13 +1,17 @@
 #include "gosh.h"
+
 /**
  * alias_handler - controls execution of alias commands
- * @agv: arguments vector from user
+ * @agv: arguments vector from the user
  * Return: 0 on success, -1 on error.
  */
+
+int alias_handler(char **agv);
 int alias_handler(char **agv)
 {
 	int i = 1, ret;
 	char *temp, *name, *val, *entry;
+
 	struct alias *found;
 
 	if (!agv[1])
@@ -18,10 +22,12 @@ int alias_handler(char **agv)
 	{
 		while (agv[i])
 		{
-			entry = s_dup(agv[i]), temp = s_chr(entry, '=');
+			entry = s_dup(agv[i]);
+			temp = s_chr(entry, '=');
 			if (temp)
 			{
-				name = s_tok(entry, "="), val = s_tok(NULL, "=");
+				name = s_tok(entry, "=");
+				val = s_tok(NULL, "=");
 				if (val[0] == '\'' || val[0] == '\"')
 				{
 					val = _dequoter(val);
@@ -30,20 +36,20 @@ int alias_handler(char **agv)
 				}
 				ret = gosh_define_alias(name, val);
 				if (ret < 0)
-					gosh_printf("An error occured\n");
+					gosh_printf("An error occurred\n");
 			}
 			else
 			{
 				found = gosh_find_alias(entry);
 				if (!found)
-					gosh_printf("-%s alias: %s not found\n",
-						__FILE__, entry);
+					gosh_printf("-%s alias: %s not found\n", __FILE__, entry);
 				else
-					gosh_printf("alias %s='%s'\n",
-					found->a_name, found->a_value);
+					gosh_printf("alias %s='%s'\n", found->a_name, found->a_value);
 			}
-			free(entry), i++;
+			free(entry);
+			i++;
 		}
 	}
 	return (0);
 }
+
