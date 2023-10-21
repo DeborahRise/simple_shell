@@ -128,7 +128,7 @@ void gosh_go_next(gosh_sep_list **list_s,
  * the g_separators ;, | and &, and executes them
  *
  * @gosh_gosh: data structure
- * @g_g_input: input string
+ * @g_input: input string
  * Return: 0 to exit, 1 to continue
  */
 int gosh_split_commands(go_shell *gosh_gosh, char *g_input)

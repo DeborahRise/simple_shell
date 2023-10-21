@@ -146,7 +146,7 @@ void g_print_syntax_error(go_shell *gosh_gosh, char *input, int i, int bool)
 }
 
 /**
- * check_syntax_error - intermediate function to
+ * g_check_syntax_error - intermediate function to
  * find and print a syntax error
  *
  * @gosh_gosh: data structure

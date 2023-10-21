@@ -59,7 +59,7 @@ void free_gosh_sep_list(gosh_sep_list **head)
  * add_gosh_line_end - adds a command line at the end
  * of a gosh_cmd_line.
  * @head: head of the linked list.
- * @line: command line.
+ * @gcmd_line: command line.
  * Return: address of the head.
  */
 gosh_cmd_line *add_gosh_line_node_end(gosh_cmd_line **head, char *gcmd_line)
